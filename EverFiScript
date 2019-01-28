@@ -1,0 +1,19 @@
+function myLoop () {           //  create a loop function
+   setTimeout(function () {    //  call a 3s setTimeout when the loop is called
+        var x = document.getElementsByClassName("arrow next big")[0].innerHTML;
+        var start = x.indexOf('#');
+        var string = x.substring(start,x.length-12);
+        var beginning = "https://d1vyejqi0lnyjd.cloudfront.net/curriculums/finlit/2_8_4/index.html?assessmentEndpoint=https%3A%2F%2Fplatform.everfi.net&basePath=https%3A%2F%2Fplatform.everfi.net&className=5th+Period+Finance&id=26478518&local=false&name=Maximiliano+A&schoolName=Langley%2BHigh%2BSchool&sponsorLogo=&survey_two_completed=false&userId=18156768";
+        window.location.href = beginning + string;
+        console.log(x);
+      if (x.indexOf("postquiz") > 0){
+            console.log("At quiz page");
+            return;
+      }  
+      if (x.indexOf("postquiz" == -1)) {            //  if the counter < 10, call the loop function
+         myLoop();             //  ..  again which will trigger another 
+      }                        //  ..  setTimeout()
+   }, 3000)
+}
+
+myLoop(); 
