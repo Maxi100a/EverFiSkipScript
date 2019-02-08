@@ -5,7 +5,7 @@ function myLoop () {           //  create a loop function
         var x = document.getElementsByClassName("arrow next big")[0].innerHTML;
         var start = x.indexOf('#');
         var string = x.substring(start,x.length-12);
-        var beginning = link.substring(0, linkEnd);
+        var beginning = link.substring(0, link.length-linkEnd);
         window.location.href = beginning + string;
         console.log(x);
       if (x.indexOf("postquiz") > 0){
